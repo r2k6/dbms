@@ -1,0 +1,43 @@
+VIEW
+
+AIM:
+Implement the view
+
+1. Create a table customer with id,name,address and salary
+2. Insert values into the customer table
+3. Display the values from customer
+4. Create the view
+5. Modify the view and update the salary of customer
+6. Drop view
+
+
+QUERIES:
+
+CREATE TABLE CUSTOMER
+(
+ID NUMBER(20),
+NAME VARCHAR(20),
+ADDR VARCHAR(20),
+SALARY NUMBER(20)
+);
+
+INSERT INTO CUSTOMER VALUES(100,'EVA','TVM',50000);
+INSERT INTO CUSTOMER VALUES(101,'RUBY','CLT',45000);
+INSERT INTO CUSTOMER VALUES(102,'SUE','TCR',60000);
+INSERT INTO CUSTOMER VALUES(103,'FINU','CLT',55000);
+INSERT INTO CUSTOMER VALUES(104,'NISHA','TVM',65000);
+
+CREATE VIEW CUST AS
+SELECT ID,NAME,ADDR,SALARY
+FROM CUSTOMER;
+
+SELECT * FROM CUST;
+
+UPDATE CUST
+SET SALARY=70000
+WHERE ID=100;
+
+SELECT * FROM CUST;
+
+DROP VIEW CUST;
+DROP TABLE CUSTOMER;
