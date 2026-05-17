@@ -1,0 +1,30 @@
+ODD OR EVEN USING PROCEDURE
+
+AIM:
+Write a PL/SQL program to find a number is odd or even using procedure.
+
+ALGORITHM:
+Step1: Start
+Step2: Accept a numeric input num from the user
+Step3: Call the procedure odd_or_even(num)
+Step4: Inside the procedure:
+4.1: If the number mod 2 equals 0 then
+Display "Even"
+4.2: Else
+Display "Odd"
+Step5: Stop
+
+
+CODE
+
+CREATE OR REPLACE PROCEDURE ODD_OR_EVEN(NUM INTEGER)
+IS
+BEGIN
+IF (MOD(NUM,2)=0) THEN
+DBMS_OUTPUT.PUT_LINE('EVEN NUMBER');
+ELSE
+DBMS_OUTPUT.PUT_LINE('ODD NUMBER');
+END IF;
+END;
+/
+EXEC ODD_OR_EVEN(&num);
