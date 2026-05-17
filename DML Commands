@@ -10,3 +10,5 @@ Update admission SET branch ='cs' where adm no=100
 SELECT *FROM admission;
 INSERT INTO admission values (200,'EC',date '2024 -09-16');
 SEFECT *FROM admission;
+DELETE FROM admISSIOn WHERE adm no-200:
+SELECT *FROM admission ;
