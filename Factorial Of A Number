@@ -1,0 +1,34 @@
+FACTORIAL OF A NUMBER
+
+AIM:
+To find the factorial of a number by using PL/SQL
+
+ALGORITHM:
+Step1: Start
+Step2: Declare the variables f and n as integer
+Step3: Read the value of variable n
+Step4: f:=1
+Step5: Repeat the steps for each i given 1 to n
+Step6: f:=f*i
+Step7: End loop
+Step8: Print the value of f
+Step9: Stop
+
+
+CODE
+
+DECLARE
+
+N INTEGER;
+F INTEGER;
+I INTEGER;
+
+BEGIN
+N:=&N;
+F:=1;
+FOR I IN 1..N LOOP
+F:=F*I;
+END LOOP;
+DBMS_OUTPUT.PUT_LINE(F);
+END;
+/
