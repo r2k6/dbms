@@ -1,0 +1,81 @@
+
+AIM: Implement Nested Query
+
+
+1. Create table student (SID, SNAME, ADDRESS, DEPT_ID) set SID primary key,
+   DEPT_ID foreign key
+2. Create table department (DNO, DNAME) set DNO as primary key
+3. Insert values into student, dept table
+4. Write a nested query to select student name and address where dept in CS
+5. Write a co-related query to select student name & dept name
+6. Display the number of students in each department with department name
+7. Display the numbers of students in each department where no. of students < 2
+
+
+QUERIES:
+
+CREATE TABLE STUDENT (
+SID NUMBER PRIMARY KEY,
+SNAME VARCHAR(25),
+ADDR VARCHAR(25),
+DEPT_ID NUMBER,
+FOREIGN KEY (DEPT_ID) REFERENCES DEPARTMENT(DEPT_ID)
+);
+
+CREATE TABLE DEPARTMENT (
+DEPT_ID NUMBER PRIMARY KEY,
+DEPT_NAME VARCHAR(20)
+);
+
+INSERT INTO STUDENT VALUES
+(1,'Alen PK','Pazhathottam',101);
+
+INSERT INTO STUDENT VALUES
+(2,'Yasen','Cheralloor',102);
+
+INSERT INTO STUDENT VALUES
+(3,'John','Anyumaly',101);
+
+INSERT INTO STUDENT VALUES
+(4,'Neeraj','Kollam',103);
+
+INSERT INTO STUDENT VALUES
+(5,'Mathew','Mangalam',102);
+
+INSERT INTO DEPARTMENT VALUES
+(101,'Computer Science');
+
+INSERT INTO DEPARTMENT VALUES
+(102,'Mathematics');
+
+INSERT INTO DEPARTMENT VALUES
+(103,'Physics');
+
+
+SELECT SNAME, ADDR
+FROM STUDENT
+WHERE DEPT_ID =
+(SELECT DEPT_ID
+FROM DEPARTMENT
+WHERE DEPT_NAME = 'Computer Science');
+
+
+SELECT SNAME,
+(SELECT DEPT_NAME
+FROM DEPARTMENT
+WHERE DEPT_ID = STUDENT.DEPT_ID)
+DEPT_NAME
+FROM STUDENT;
+
+
+SELECT DEPT_NAME, COUNT(*)
+FROM STUDENT S, DEPARTMENT D
+WHERE S.DEPT_ID = D.DEPT_ID
+GROUP BY DEPT_NAME;
+
+
+SELECT DEPT_NAME, COUNT(*)
+FROM STUDENT S, DEPARTMENT D
+WHERE S.DEPT_ID = D.DEPT_ID
+GROUP BY DEPT_NAME
+HAVING COUNT(*) < 2;
