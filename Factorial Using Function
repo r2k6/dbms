@@ -1,0 +1,40 @@
+FACTORIAL USING FUNCTION
+
+AIM:
+Write a PL/SQL program to find factorial of a number using function.
+
+ALGORITHM:
+Step1: Start
+Step2: Accept an integer input num
+Step3: Declare variables fact=1
+Step4: Iterate from 1 to num
+4.1: fact=fact*i
+Step5: Return fact
+Step6: Stop
+
+
+CODE
+
+CREATE OR REPLACE FUNCTION FACTORIAL(NUM INTEGER)
+RETURN INTEGER IS
+
+FACT INTEGER:=1;
+
+BEGIN
+
+FOR I IN 1..NUM LOOP
+FACT:=FACT*I;
+END LOOP;
+RETURN FACT;
+END;
+/
+
+DECLARE
+NUM INTEGER;
+RESULT INTEGER;
+BEGIN
+NUM:=6;
+RESULT:=FACTORIAL(NUM);
+DBMS_OUTPUT.PUT_LINE('Factorial is:'||RESULT);
+END;
+/
