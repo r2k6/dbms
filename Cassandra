@@ -1,0 +1,53 @@
+CASSANDRA
+
+AIM:
+Implement basic CURD operations in Cassandra.
+
+
+Questions
+
+1. Create a keyspace college.
+2. Create a table student.
+3. Insert rows in a table student.
+4. Display student.
+5. Update table student.
+6. Delete table student.
+
+
+Query
+
+1. CREATE KEYSPACE COLLEGE
+WITH REPLICATION =
+{'class':'SimpleStrategy',
+'replication_factor':1};
+
+2. USE COLLEGE;
+
+3. CREATE TABLE STUDENT
+(
+ID INT PRIMARY KEY,
+NAME TEXT,
+AGE INT,
+MARKS INT
+);
+
+4. INSERT INTO STUDENT (ID,NAME,AGE,MARKS)
+VALUES (1,'ALICE',20,88);
+
+INSERT INTO STUDENT (ID,NAME,AGE,MARKS)
+VALUES (2,'ALICE',22,91);
+
+5. SELECT * FROM STUDENT;
+
+6. UPDATE STUDENT
+SET MARKS=95
+WHERE ID=2;
+
+7. DELETE FROM STUDENT
+WHERE ID=1;
+
+SELECT * FROM STUDENT;
+
+8. DROP TABLE STUDENT;
+
+9. DROP KEYSPACE COLLEGE;
