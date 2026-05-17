@@ -1,0 +1,30 @@
+
+
+AIM:
+Write a PL/SQL query to find sum of 2 numbers.
+
+ALGORITHM:
+Step1: Start
+Step2: Declare 3 variables
+Step3: Read 2 variables
+Step4: Find sum
+Step5: Display sum
+Step6: Stop
+
+
+CODE
+
+DECLARE
+A NUMBER(10);
+B NUMBER(10);
+C NUMBER(10);
+
+BEGIN
+A:=&A;
+B:=&B;
+C:=A+B;
+
+DBMS_OUTPUT.PUT_LINE(C);
+
+END;
+/
