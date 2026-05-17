@@ -1,0 +1,43 @@
+DISPLAY SALARY
+
+AIM:
+Write a PL/SQL program for display of salary of an employee
+
+ALGORITHM:
+Step1: Start
+Step2: Declare variable rid and sal
+Step3: Enter the value of rid
+Step4: Select the salary from the table employee where the employee id equals to rid
+Step5: Assign the salary to sal
+Step6: Display the salary in sal
+Step7: Stop
+
+
+QUERIES:
+
+CREATE TABLE EMPLOYEE
+(
+EMP_ID NUMBER(20),
+SALARY NUMBER(20)
+);
+
+INSERT INTO EMPLOYEE VALUES(101,20000);
+INSERT INTO EMPLOYEE VALUES(102,10000);
+INSERT INTO EMPLOYEE VALUES(103,15000);
+INSERT INTO EMPLOYEE VALUES(104,9000);
+
+
+CODE
+
+DECLARE
+RID INTEGER;
+SAL INTEGER;
+BEGIN
+RID:=&RID;
+SELECT SALARY INTO SAL
+FROM EMPLOYEE
+WHERE EMP_ID=RID;
+DBMS_OUTPUT.PUT_LINE('Salary is:'||SAL);
+
+END;
+/
