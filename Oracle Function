@@ -1,0 +1,89 @@
+
+AIM: Implement Oracle Functions
+
+1. Create a table student Reg No, Name, M1, M2, M3
+2. Add a new column total
+3. Insert values into student table
+4. Update total of a student table
+5. Display student table
+
+
+QUERIES:
+
+CREATE TABLE STUDENT (
+RegNo NUMBER,
+Name VARCHAR(15),
+Mark1 NUMBER,
+Mark2 NUMBER,
+Mark3 NUMBER
+);
+
+DESC STUDENT;
+
+ALTER TABLE STUDENT
+ADD Total NUMBER;
+
+INSERT INTO STUDENT VALUES (100,'ABDU',48,47,50);
+INSERT INTO STUDENT VALUES (101,'AMAL',50,50,50);
+INSERT INTO STUDENT VALUES (102,'RIZAL',48,49,50);
+INSERT INTO STUDENT VALUES (103,'NEHAL',49,49,50);
+INSERT INTO STUDENT VALUES (104,'IQBAL',50,50,50);
+
+UPDATE STUDENT
+SET Total = Mark1 + Mark2 + Mark3;
+
+SELECT * FROM STUDENT;
+
+AGGREGATE FUNCTION
+
+1. Find the average of total in student table
+2. Find sum of total in student table
+3. Find the maximum mark of total from student table
+4. Find the minimum mark of total from student table
+5. Find the number of students from student table
+
+
+QUERIES:
+
+SELECT AVG(TOTAL) FROM STUDENT;
+SELECT SUM(TOTAL) FROM STUDENT;
+SELECT MAX(TOTAL) FROM STUDENT;
+SELECT MIN(TOTAL) FROM STUDENT;
+SELECT COUNT(*) FROM STUDENT;
+
+NUMERIC FUNCTIONS
+
+1. Find the absolute value of a number
+2. Find the power of a number
+3. Find the round value
+4. Find the square root of a number
+5. Find the exponential value
+6. Find the greatest among values
+
+
+QUERIES:
+
+SELECT ABS(400) FROM DUAL;
+SELECT POWER(2,3) FROM DUAL;
+SELECT ROUND(4.6) FROM DUAL;
+SELECT SQRT(16) FROM DUAL;
+SELECT EXP(5) FROM DUAL;
+SELECT GREATEST(5,7) FROM DUAL;
+  
+DATE FUNCTION
+
+1. Find months between
+2. Find system date
+3. Find the total number of months or Add months
+4. Find the last date
+
+
+QUERIES:
+
+SELECT MONTHS_BETWEEN('31-MAY-2024','31-JAN-2024')
+FROM DUAL;
+SELECT SYSDATE FROM DUAL;
+SELECT ADD_MONTHS('31-MAY-2024',4)
+FROM DUAL;
+SELECT LAST_DAY('31-MAY-2024')
+FROM DUAL;
