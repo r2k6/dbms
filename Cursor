@@ -1,0 +1,41 @@
+CURSOR
+
+AIM
+
+Write a PL/SQL program to implement cursor to print name and salary from employee table (eno, ename, sal, job).
+
+
+Algorithm
+
+1. Start
+2. Declare cursor to select ename and salary from employee table
+3. Declare variable to store
+4. Open cursor
+5. Fetch record from cursor
+6. Display ename and salary
+7. Repeat until all record and fetch
+8. Close cursor
+9. Stop
+
+
+Query
+
+DECLARE
+
+CURSOR EMP_CUR IS
+SELECT ENAME, SAL FROM EMP;
+V_NAME EMP.ENAME%TYPE;
+V_SAL EMP.SAL%TYPE;
+
+BEGIN
+
+OPEN EMP_CUR;
+LOOP
+FETCH EMP_CUR INTO V_NAME, V_SAL;
+EXIT WHEN EMP_CUR%NOTFOUND;
+DBMS_OUTPUT.PUT_LINE('NAME '||V_NAME||' SALARY '||V_SAL);
+END LOOP;
+CLOSE EMP_CUR;
+
+END;
+/
