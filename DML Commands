@@ -1,0 +1,12 @@
+CREATE TABLE admission (adm no number, branch varchas (2), doa date);
+DESC admission;
+INSERT INTO admissIon values (100,'AD',date '2024-08-20');
+INSERT INTO admission values (101,'CS',date '2024-08-28');
+INSET  INTO admission values (102,'CY',date '2024-08-19');
+INSERT INTO admIssion values (103,'CY',date '2024-08-21');
+INSERT INTO admission values (104,'CS',date '2024-08-20');
+SELECT *FROM admission 
+Update admission SET branch ='cs' where adm no=100
+SELECT *FROM admission;
+INSERT INTO admission values (200,'EC',date '2024 -09-16');
+SEFECT *FROM admission;
