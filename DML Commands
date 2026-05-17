@@ -12,3 +12,68 @@ INSERT INTO admission values (200,'EC',date '2024 -09-16');
 SEFECT *FROM admission;
 DELETE FROM admISSIOn WHERE adm no-200:
 SELECT *FROM admission ;
+
+
+---- Query
+
+-- 1. Create table
+CREATE TABLE student (
+    reg_no NUMBER(3),
+    name VARCHAR2(20),
+    mark1 NUMBER,
+    mark2 NUMBER,
+    mark3 NUMBER
+);
+
+-- 2. Alter table
+ALTER TABLE student
+ADD (total NUMBER(10));
+
+-- Table altered
+
+-- 3. Insert values
+INSERT INTO student
+VALUES (100, 'Arun', 150, 50, 20, NULL);
+
+-- 1 row created
+
+-- 4. Update total
+UPDATE student
+SET total = mark1 + mark2 + mark3;
+
+-- 5 rows updated
+
+-- 5. Select table
+SELECT * FROM student;
+
+-- Output
+
+REGNO   NAME    MARK1   MARK2   MARK3   TOTAL
+------------------------------------------------
+100     Arun    150     50      20      220
+110     Manu    200     150     50      400
+120     Athul   150     150     50      350
+130     Anu     250     150     100     500
+150     Amal    50      50      50      150
+
+
+-- Aggregate Functions
+
+-- 1. Average of total
+SELECT AVG(total)
+FROM student;
+
+-- Output
+AVG(TOTAL)
+-----------
+324
+
+
+-- 2. Sum of total
+SELECT SUM(total)
+FROM student;
+
+-- Output
+SUM(TOTAL)
+-----------
+1620
