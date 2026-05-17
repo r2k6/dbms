@@ -1,0 +1,49 @@
+SET OPERATION
+
+AIM:
+Implement all the set operations which are UNION, INTERSECTION and MINUS
+
+1. Create a table student with id,name and mark
+2. Create a table alumni with id,name and mark
+3. Insert values into student and alumni table
+4. Display students present in both student and alumni table (duplicate not allowed) (union)
+5. Display common from both the student and alumni (intersect)
+6. Display student name in student table but not in alumni (minus)
+
+
+QUERIES:
+
+CREATE TABLE STUDENT
+(
+ID NUMBER,
+NAME VARCHAR(10)
+);
+
+INSERT INTO STUDENT VALUES(100,'NIBO');
+INSERT INTO STUDENT VALUES(101,'REKHA');
+INSERT INTO STUDENT VALUES(102,'JOHN');
+INSERT INTO STUDENT VALUES(103,'EVA');
+
+CREATE TABLE ALUMNI
+(
+ID NUMBER,
+NAME VARCHAR(10)
+);
+
+INSERT INTO ALUMNI VALUES(200,'FINU');
+INSERT INTO ALUMNI VALUES(201,'ABHI');
+INSERT INTO ALUMNI VALUES(101,'REKHA');
+INSERT INTO ALUMNI VALUES(104,'NISHA');
+
+
+SELECT NAME FROM STUDENT
+UNION
+SELECT NAME FROM ALUMNI;
+
+SELECT NAME FROM STUDENT
+INTERSECT
+SELECT NAME FROM ALUMNI;
+
+SELECT NAME FROM STUDENT
+MINUS
+SELECT NAME FROM ALUMNI;
