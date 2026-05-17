@@ -1,0 +1,30 @@
+ODD OR EVEN
+
+AIM:
+Write a PL/SQL query to find the number whether it is odd or even.
+
+ALGORITHM:
+Step1: Start
+Step2: Declare a variable A
+Step3: Read variable A
+Step4: IF value of 2 = 0
+Step5: Display even
+Step6: Else display odd
+Step7: End
+
+
+CODE
+
+DECLARE
+A NUMBER(10);
+
+BEGIN
+A:=&A;
+IF MOD(A,2)=0 THEN
+DBMS_OUTPUT.PUT_LINE('EVEN');
+ELSE
+DBMS_OUTPUT.PUT_LINE('ODD');
+END IF;
+
+END;
+/
