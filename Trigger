@@ -1,0 +1,42 @@
+TRIGGER
+
+AIM
+To create a trigger that automatically assign/display grade based on student marks.
+
+
+Algorithm
+
+1. Start
+2. Create a trigger with BEFORE INSERT OR UPDATE
+3. Check marks using IF condition
+4. Assign grades accordingly
+5. End trigger
+6. Insert or update student record
+7. Stop
+
+
+Query
+
+CREATE OR REPLACE TRIGGER GRADE_BI
+BEFORE INSERT OR UPDATE
+ON STUDENT
+FOR EACH ROW
+
+BEGIN
+
+IF :NEW.MARKS >= 90 THEN
+:NEW.GRADE := 'A';
+
+ELSIF :NEW.MARKS >= 75 THEN
+:NEW.GRADE := 'B';
+
+ELSIF :NEW.MARKS >= 50 THEN
+:NEW.GRADE := 'C';
+
+ELSE
+:NEW.GRADE := 'F';
+
+END IF;
+
+END;
+/
