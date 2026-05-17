@@ -1,1 +1,12 @@
+QUERIES:
 
+1.CREATE TABLE Student (std number (3), Stname varchar (20), address varchar (25));
+DESC Student;
+2.ALTER TABLE student add dob date;
+DESC Student;
+3.ALTER TABLE Student add dob date;
+DESC Student;
+4.TRUNCATE TABLE Student;
+DESC Student;
+5.DROP TABLE Student;
+DESC student';
