@@ -1,0 +1,52 @@
+JOIN OPERATION
+
+AIM:
+To implement different types of joins which are inner join, right join and full outer join.
+
+1. Create a table department with deptid, deptname
+2. Create a table employee with employee id, employee name and department number
+3. Insert values to both tables department and employee
+4. Display only employees who assigned to departments (Inner join)
+5. Display all employees including those without department (Left join)
+6. Display all departments including those without employees (Right join)
+
+
+QUERIES:
+
+CREATE TABLE DEP
+(
+DNO NUMBER,
+DNAME VARCHAR(20)
+);
+
+CREATE TABLE EMP
+(
+EID NUMBER,
+ENAME VARCHAR(20),
+DNO NUMBER
+);
+
+INSERT INTO DEP VALUES(1,'SALES');
+INSERT INTO DEP VALUES(2,'ACCOUNTANT');
+INSERT INTO DEP VALUES(3,'BILLING');
+INSERT INTO DEP VALUES(4,'HR');
+INSERT INTO EMP VALUES(100,'ABHI',1);
+INSERT INTO EMP VALUES(101,'SIDHU',1);
+INSERT INTO EMP VALUES(102,'ANJU',2);
+INSERT INTO EMP VALUES(103,'ALENA',3);
+INSERT INTO EMP VALUES(104,'RUBY',NULL);
+
+SELECT EMP.ENAME, EMP.EID, EMP.DNO, DEP.DNAME
+FROM EMP
+INNER JOIN DEP
+ON DEP.DNO=EMP.DNO;
+
+SELECT EMP.ENAME
+FROM EMP
+LEFT JOIN DEP
+ON DEP.DNO=EMP.DNO;
+
+SELECT DEP.DNAME
+FROM DEP
+RIGHT JOIN EMP
+ON EMP.DNO=DEP.DNO;
